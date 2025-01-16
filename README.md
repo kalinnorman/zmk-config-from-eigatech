@@ -14,6 +14,9 @@ Any time that a new change is pushed to GitHub it will trigger a workflow that w
     2. Connect the microcontroller to the computer with a usb cable
     3. Double click the reset button (either through the keyboard reset button that is connected or the button directly on the microcontroller itself)
     4. A new storage device should now be available on the computer -- If it isn't then try the reset button again or try a new usb cable, as not all cables are able to transfer data
+    5. Copy and paste the settings_reset configuration into the microcontroller's storage
+    6. Wait for the copying to finish, after which the storage device should disappear
+    7. Repeat steps 1 - 4
     5. Copy and paste the appropriate configuration into the microcontroller's storage (the configurations are all in the extracted folder from before, there should be one each for the dongle, left half, and right half of the keyboard)
     6. After the contents finish copying over, the storage device should disappear, and you can disconnect the microcontroller from the computer
     7. It's flashed!
