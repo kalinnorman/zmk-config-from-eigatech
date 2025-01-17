@@ -1,5 +1,6 @@
 # Desired changes
 
+add in volume control
 make / more accessible to simplify commenting code
 make arrow keys more accessible (moving in code files and using keyboard shortcuts to move windows around)
 easier access to parenthesis and brackets
