@@ -1,6 +1,5 @@
 # Desired changes
 
-- The layer hold behavior of my two tap dance keys requires a delay before the layer hold takes effect. I would like it to be more responive to the layer hold behavior if another key is pressed and released while the tap dance key is held down (maybe this is because the tap dance behavior takes precedence over the 'prefer hold' behavior of the layer hold)
 
 # Changes that have been implemented but need more time testing
 
@@ -13,6 +12,7 @@
 - gaming layer
 - make / and _ more accessible
 - add function keys to a layer (I modified the symbols layer to have most everything on the left hand and function keys on the right)
+- The layer hold behavior of my two tap dance keys requires a delay before the layer hold takes effect. I would like it to be more responive to the layer hold behavior if another key is pressed and released while the tap dance key is held down (maybe this is because the tap dance behavior takes precedence over the 'prefer hold' behavior of the layer hold)
 
 # Implemented and tested
 
