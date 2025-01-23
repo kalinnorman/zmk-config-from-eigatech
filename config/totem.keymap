@@ -53,14 +53,34 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 1 HOME>, <&tog 1>, <&tog 2>;
+            bindings = <&kp HOME>, <&tog 1>, <&tog 2>;
         };
 
         tdr: tap_dance_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 2 END>, <&caps_word>, <&tog 5>;
+            bindings = <&kp END>, <&caps_word>, <&tog 3>;
+        };
+
+        htdl: holdlayer_tapdance_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTDL";
+            bindings = <&mo>, <&tdl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-while-undecided;
+        };
+
+        htdr: holdlayer_tapdance_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTDR";
+            bindings = <&mo>, <&tdr>;
+
+            #binding-cells = <2>;
+            hold-while-undecided;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -121,10 +141,10 @@
         Base {
             display-name = "Base";
             bindings = <
-      &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W           &kp V
-      &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm LEFT_ALT S  &hm LEFT_GUI N
-&tdl  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F           &kp P           &tdr
-                              &kp ESC      &kp BACKSPACE  &kp DELETE        &kp ENTER      &kp SPACE     &kp TAB
+           &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W           &kp V
+           &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm LEFT_ALT S  &hm LEFT_GUI N
+&htdl 1 0  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F           &kp P           &htdr 2 0
+                                   &kp ESC      &kp BACKSPACE  &kp DELETE        &kp ENTER      &kp SPACE     &kp TAB
             >;
         };
 
