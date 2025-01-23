@@ -1,8 +1,6 @@
 # Desired changes
 
-- make / and _ more accessible
-- gaming layer
-- add function keys layer
+
 
 # Changes that have been implemented but need more time testing
 
@@ -11,6 +9,10 @@
 - make arrow keys more accessible (moving in code files and using keyboard shortcuts to move windows around)
 - add in volume control
 - look into home row mod and hold layer keys to see if that functionality can be ensured if a second key is pressed while the key is held even if not enough time has elapsed
+- added combo to go to base layer (in case I get lost and don't know what layer I'm on and want to reset to the base layer)
+- gaming layer
+- make / and _ more accessible
+- add function keys to a layer (I modified the symbols layer to have most everything on the left hand and function keys on the right)
 
 # Implemented and tested
 

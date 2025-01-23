@@ -102,12 +102,21 @@
             key-positions = <13 33>;
             layers = <0>;
         };
+
+        tobaselayer {
+            bindings = <&to 0>;
+            key-positions = <36 35 37>;
+        };
+
+        togamelayer {
+            bindings = <&to 6>;
+            key-positions = <32 33 34>;
+            layers = <0>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
-
-        // This is Kalin's version of the Base layer, primarily using an Engram layout, slightly modified with Q and Z positioning
 
         Base {
             display-name = "Base";
@@ -119,16 +128,6 @@
             >;
         };
 
-        //         Base {
-        //             display-name = "Base";
-        //             bindings = <
-        //               &kp Q       &kp W       &kp E          &kp R         &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-        //               &hm LGUI A  &hm LALT S  &hm LCTRL D    &hm LSHIFT F  &kp G        &kp H    &hm RSHFT J  &hm RCTRL K  &hm RALT L  &hm RGUI SEMICOLON
-        // &lt 3 ESCAPE  &kp Z       &kp X       &kp C          &kp V         &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp SLASH           &kp APOSTROPHE
-        //                                       &mt LCTRL DEL  &lt 1 TAB     &kp SPACE    &kp RET  &lt 2 BSPC   &kp MINUS
-        //             >;
-        //         };
-
         Nav {
             display-name = "Nav";
             bindings = <
@@ -139,62 +138,15 @@
             >;
         };
 
-        //         Nav {
-        //             display-name = "Nav";
-        //             bindings = <
-        //               &kp TILDE       &trans     &kp UP_ARROW  &trans     &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-        //               &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-        // &kp LEFT_ALT  &kp LEFT_WIN    &kp MINUS  &trans        &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
-        //                                          &trans        &trans     &trans      &trans    &trans        &kp DOT
-        //             >;
-        //         };
-
         Sym {
             display-name = "Sym";
             bindings = <
-        &kp EXCL   &kp AT         &kp HASH         &kp DOLLAR  &kp PERCENT      &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
-        &trans     &trans         &trans           &trans      &kp SLASH        &trans     &trans         &trans           &trans   &trans
-&trans  &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp GRAVE   &kp BACKSLASH    &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &trans
-                                  &trans           &trans      &trans           &trans     &trans         &trans
+           &kp EXCL   &kp AT         &kp HASH         &kp DOLLAR  &kp PERCENT         &kp F1  &kp F2          &kp F3            &kp F4   &kp F5
+           &kp MINUS  &kp PLUS       &kp UNDERSCORE   &kp SLASH   &kp BACKSLASH       &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp F11  &kp F12
+&kp GRAVE  &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp EQUAL   &kp SINGLE_QUOTE    &kp F6  &kp F7          &kp F8            &kp F9   &kp F10  &trans
+                                     &trans           &trans      &trans              &trans  &trans          &trans
             >;
         };
-
-        //         Sym {
-        //             display-name = "Sym";
-        //             bindings = <
-        //                 &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
-        //                 &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans           &trans   &trans
-        // &studio_unlock  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &kp HOME
-        //                                   &trans    &trans      &trans         &trans     &trans         &trans
-        //             >;
-        //         };
-        //         Fun {
-        //             display-name = "Fun";
-        //             bindings = <
-        //         &bootloader  &trans  &trans  &trans  &to 4     &trans  &trans  &trans  &kp END  &kp F1
-        //         &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F10
-        // &trans  &trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &kp F20  &kp F7
-        //                              &trans  &trans  &trans    &trans  &trans  &trans
-        //             >;
-        //         };
-        //         Gaming {
-        //             display-name = "Gaming";
-        //             bindings = <
-        //             &kp Z           &kp X  &kp C      &kp V         &sl 5     &trans  &trans  &trans  &trans  &trans
-        //             &kp TAB         &kp Q  &kp W      &kp E         &kp R     &trans  &trans  &trans  &trans  &trans
-        // &kp ESCAPE  &kp LEFT_SHIFT  &kp A  &kp S      &kp D         &kp F     &trans  &trans  &trans  &trans  &trans  &trans
-        //                                    &kp LCTRL  &kp LEFT_ALT  &trans    &trans  &trans  &trans
-        //             >;
-        //         };
-        //         Gaming+ {
-        //             display-name = "Gaming+";
-        //             bindings = <
-        //         &kp F10  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp T     &kp RA(RC(Y))  &kp RA(RC(U))  &trans  &trans  &kp LC(RA(DEL))
-        //         &kp L    &kp O         &kp Y         &kp K         &kp G     &kp F5         &trans         &trans  &trans  &trans
-        // &trans  &to 0    &trans        &trans        &trans        &trans    &trans         &trans         &trans  &trans  &trans           &kp LA(F4)
-        //                                &kp J         &kp I         &kp M     &trans         &trans         &trans
-        //             >;
-        //         };
 
         Qwerty {
             display-name = "Qwerty";
@@ -221,6 +173,15 @@
        &none  &none  &none  &none  &none    &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_N5     &kp KP_NUMBER_6  &kp KP_DIVIDE
 &none  &none  &none  &none  &none  &none    &kp KP_MINUS     &kp KP_NUMBER_1  &kp KP_N2     &kp KP_N3        &kp PIPE       &none
                      &none  &none  &none    &kp KP_DOT       &kp KP_N0        &kp KP_EQUAL
+            >;
+        };
+
+        Gaming {
+            bindings = <
+          &kp ESC    &kp Q  &kp W  &kp E      &kp R      &kp T   &kp Y   &kp U   &kp I  &kp O
+          &kp LSHFT  &kp A  &kp S  &kp D      &kp F      &kp G   &kp H   &kp J   &kp K  &kp L
+&kp LALT  &kp LCTRL  &kp Z  &kp X  &kp C      &kp V      &kp B   &kp N   &kp M   &kp P  &kp BSPC  &kp ENTER
+                            &kp M  &kp SPACE  &kp TAB    &kp N1  &kp N2  &kp N3
             >;
         };
     };
