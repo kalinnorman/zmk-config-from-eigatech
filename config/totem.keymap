@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt 2 END>, <&caps_word>, <&tog 3>;
+            bindings = <&lt 2 END>, <&caps_word>, <&tog 5>;
         };
     };
 
@@ -68,7 +68,7 @@
         compatible = "zmk,combos";
 
         macrolayer {
-            bindings = <&mo 4>;
+            bindings = <&mo 1>;
             key-positions = <0 10>;
             layers = <0>;
         };
@@ -98,7 +98,7 @@
         };
 
         numberslayer {
-            bindings = <&mo 5>;
+            bindings = <&mo 3>;
             key-positions = <13 33>;
             layers = <0>;
         };
@@ -109,7 +109,7 @@
         };
 
         togamelayer {
-            bindings = <&to 6>;
+            bindings = <&to 4>;
             key-positions = <32 33 34>;
             layers = <0>;
         };
@@ -128,13 +128,12 @@
             >;
         };
 
-        Nav {
-            display-name = "Nav";
+        Macros {
             bindings = <
-        &kp TILDE       &none      &kp UP_ARROW  &kp DOT    &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-        &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MULTIPLY
-&trans  &none           &kp MINUS  &none         &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0     &trans
-                                   &trans        &trans     &trans      &trans    &trans        &trans
+       &none  &kp LS(LG(LEFT))  &kp LS(LG(UP))    &kp LS(LG(RIGHT))  &none             &none          &none        &none         &none      &none
+       &none  &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)      &kp LEFT_SHIFT    &none          &kp LEFT     &kp UP_ARROW  &kp RIGHT  &kp LEFT_CONTROL
+&none  &none  &none             &kp LG(DOWN)      &none              &none             &none          &none        &kp DOWN      &none      &none             &none
+                                &kp C_MUTE        &kp C_VOL_UP       &kp C_VOL_DN      &kp LC(SLASH)  &kp LA(TAB)  &kp LEFT_ALT
             >;
         };
 
@@ -145,25 +144,6 @@
            &kp MINUS  &kp PLUS       &kp UNDERSCORE   &kp SLASH   &kp BACKSLASH       &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp F11  &kp F12
 &kp GRAVE  &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp EQUAL   &kp SINGLE_QUOTE    &kp F6  &kp F7          &kp F8            &kp F9   &kp F10  &trans
                                      &trans           &trans      &trans              &trans  &trans          &trans
-            >;
-        };
-
-        Qwerty {
-            display-name = "Qwerty";
-            bindings = <
-        &kp Q  &kp W  &kp E   &kp R   &kp T     &kp Y   &kp U   &kp I      &kp O       &kp P
-        &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &kp J   &kp K      &kp L       &kp SEMI
-&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &trans
-                      &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        Macros {
-            bindings = <
-       &none  &kp LS(LG(LEFT))  &kp LS(LG(UP))    &kp LS(LG(RIGHT))  &none           &none          &none        &none         &none      &none
-       &none  &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)      &none           &none          &kp LEFT     &kp UP_ARROW  &kp RIGHT  &none
-&none  &none  &none             &kp LG(DOWN)      &none              &none           &none          &none        &kp DOWN      &none      &none  &none
-                                &kp C_MUTE        &kp C_VOL_UP       &kp C_VOL_DN    &kp LC(SLASH)  &kp LA(TAB)  &none
             >;
         };
 
@@ -182,6 +162,16 @@
           &kp LSHFT  &kp A  &kp S  &kp D      &kp F      &kp G   &kp H   &kp J   &kp K  &kp L
 &kp LALT  &kp LCTRL  &kp Z  &kp X  &kp C      &kp V      &kp B   &kp N   &kp M   &kp P  &kp BSPC  &kp ENTER
                             &kp M  &kp SPACE  &kp TAB    &kp N1  &kp N2  &kp N3
+            >;
+        };
+
+        Qwerty {
+            display-name = "Qwerty";
+            bindings = <
+        &kp Q  &kp W  &kp E   &kp R   &kp T     &kp Y   &kp U   &kp I      &kp O       &kp P
+        &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &kp J   &kp K      &kp L       &kp SEMI
+&trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
