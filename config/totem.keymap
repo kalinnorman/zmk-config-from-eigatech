@@ -32,7 +32,7 @@
 
 &lt {
     tapping-term-ms = <240>;
-    flavor = "balanced";
+    flavor = "hold-preferred";
     quick-tap-ms = <150>;
 };
 
@@ -42,7 +42,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             global-quick-tap;
@@ -64,7 +64,45 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        macrolayer {
+            bindings = <&mo 4>;
+            key-positions = <0 10>;
+            layers = <0>;
+        };
+
+        lpar {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
+        rpar {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <5 6>;
+            layers = <0>;
+        };
+
+        lbracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <13 14>;
+            layers = <0>;
+        };
+
+        rbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        numberslayer {
+            bindings = <&mo 5>;
+            key-positions = <13 33>;
+            layers = <0>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -74,9 +112,9 @@
         Base {
             display-name = "Base";
             bindings = <
-      &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W       &kp V
-      &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm RALT S  &hm RGUI N
-&tdl  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F       &kp P       &tdr
+      &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W           &kp V
+      &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm LEFT_ALT S  &hm LEFT_GUI N
+&tdl  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F           &kp P           &tdr
                               &kp ESC      &kp BACKSPACE  &kp DELETE        &kp ENTER      &kp SPACE     &kp TAB
             >;
         };
@@ -165,6 +203,24 @@
         &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &kp J   &kp K      &kp L       &kp SEMI
 &trans  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH  &trans
                       &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        Macros {
+            bindings = <
+       &none  &kp LS(LG(LEFT))  &kp LS(LG(UP))    &kp LS(LG(RIGHT))  &none           &none          &none        &none         &none      &none
+       &none  &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)      &none           &none          &kp LEFT     &kp UP_ARROW  &kp RIGHT  &none
+&none  &none  &none             &kp LG(DOWN)      &none              &none           &none          &none        &kp DOWN      &none      &none  &none
+                                &kp C_MUTE        &kp C_VOL_UP       &kp C_VOL_DN    &kp LC(SLASH)  &kp LA(TAB)  &none
+            >;
+        };
+
+        Numbers {
+            bindings = <
+       &none  &none  &none  &none  &none    &kp KP_MULTIPLY  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &none
+       &none  &none  &none  &none  &none    &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_N5     &kp KP_NUMBER_6  &kp KP_DIVIDE
+&none  &none  &none  &none  &none  &none    &kp KP_MINUS     &kp KP_NUMBER_1  &kp KP_N2     &kp KP_N3        &kp PIPE       &none
+                     &none  &none  &none    &kp KP_DOT       &kp KP_N0        &kp KP_EQUAL
             >;
         };
     };
