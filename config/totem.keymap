@@ -169,10 +169,10 @@
 
         Numbers {
             bindings = <
-       &none  &none  &none  &none  &none    &kp KP_MULTIPLY  &kp KP_N7        &kp KP_N8     &kp KP_NUMBER_9  &none
-       &none  &none  &none  &none  &none    &kp KP_PLUS      &kp KP_NUMBER_4  &kp KP_N5     &kp KP_NUMBER_6  &kp KP_DIVIDE
-&none  &none  &none  &none  &none  &none    &kp KP_MINUS     &kp KP_NUMBER_1  &kp KP_N2     &kp KP_N3        &kp PIPE       &none
-                     &none  &none  &none    &kp KP_DOT       &kp KP_N0        &kp KP_EQUAL
+       &none  &none  &none  &none  &none    &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none
+       &none  &none  &none  &none  &none    &kp KP_PLUS      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_DIVIDE
+&none  &none  &none  &none  &none  &none    &kp KP_MINUS     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PIPE       &none
+                     &none  &none  &none    &kp KP_DOT       &kp NUMBER_0  &kp KP_EQUAL
             >;
         };
 
