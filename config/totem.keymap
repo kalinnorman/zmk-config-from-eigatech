@@ -87,12 +87,6 @@
     combos {
         compatible = "zmk,combos";
 
-        macrolayer {
-            bindings = <&mo 1>;
-            key-positions = <0 10>;
-            layers = <0>;
-        };
-
         lpar {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <3 4>;
@@ -114,6 +108,24 @@
         rbracket {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <15 16>;
+            layers = <0>;
+        };
+
+        lbrace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <24 25>;
+            layers = <0>;
+        };
+
+        rbrace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+
+        macrolayer {
+            bindings = <&mo 1>;
+            key-positions = <0 10>;
             layers = <0>;
         };
 
@@ -150,10 +162,10 @@
 
         Macros {
             bindings = <
-       &none  &kp LS(LG(LEFT))  &kp LS(LG(UP))    &kp LS(LG(RIGHT))  &none             &none          &none        &none         &none      &none
-       &none  &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)      &kp LEFT_SHIFT    &none          &kp LEFT     &kp UP_ARROW  &kp RIGHT  &kp LEFT_CONTROL
-&none  &none  &none             &kp LG(DOWN)      &none              &none             &none          &none        &kp DOWN      &none      &none             &none
-                                &kp C_MUTE        &kp C_VOL_UP       &kp C_VOL_DN      &kp LC(SLASH)  &kp LA(TAB)  &kp LEFT_ALT
+       &none  &kp LS(LG(LEFT))  &kp LS(LG(UP))    &kp LS(LG(RIGHT))  &none             &kp PRINTSCREEN  &kp HOME     &none         &kp END        &none
+       &none  &kp LG(LEFT)      &kp LG(UP_ARROW)  &kp LG(RIGHT)      &kp LEFT_SHIFT    &none            &kp LEFT     &kp UP_ARROW  &kp RIGHT      &kp LEFT_CONTROL
+&none  &none  &none             &kp LG(DOWN)      &none              &none             &none            &kp PAGE_UP  &kp DOWN      &kp PAGE_DOWN  &none             &none
+                                &kp C_MUTE        &kp C_VOL_UP       &kp C_VOL_DN      &kp LC(SLASH)    &kp LA(TAB)  &kp LEFT_ALT
             >;
         };
 
