@@ -3,7 +3,7 @@
 //                                                        ▄▀▀▀▄  ▄  ▄▀▀▀▄  ▄  ▄▀▀▀▄  █  ▄▀▀▀▄
 //                                                        █   █  █  █   █  █  █   █  █  █   █
 //                                                         ▀▀▀   █   ▀▀▀   █   ▀▀▀   ▀   ▀▀▀
-//                                                               █      ▄▄▄█▄▄▄    █   █  
+//                                                               █      ▄▄▄█▄▄▄    █   █
 //                                                               ▀      █  █  █     █▄█
 //                                                             ▀▀▀▀▀    █  █  █      ▀
 //                                                                      ▀  ▀  ▀
@@ -13,15 +13,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define Base        0
-#define Nav         1
-#define Sym         2
-#define Qwerty      3
-
-// #define Fun         3
-// #define Game        4
-// #define Gameplus    5
-// #define Qwerty      6
+#define Base     0
+#define Macros   1
+#define Sym      2
+#define Numbers  3
+#define Gaming   4
+#define Qwerty   5
 
 &mt {
     quick-tap-ms = <100>;
@@ -53,14 +50,14 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp HOME>, <&tog 1>, <&tog 2>;
+            bindings = <&kp HOME>, <&tog Macros>, <&tog Sym>;
         };
 
         tdr: tap_dance_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp END>, <&caps_word>, <&tog 3>;
+            bindings = <&kp END>, <&caps_word>, <&tog Numbers>;
         };
 
         htdl: holdlayer_tapdance_left {
@@ -124,24 +121,24 @@
         };
 
         macrolayer {
-            bindings = <&mo 1>;
+            bindings = <&mo Macros>;
             key-positions = <0 10>;
             layers = <0>;
         };
 
         numberslayer {
-            bindings = <&mo 3>;
+            bindings = <&mo Numbers>;
             key-positions = <13 33>;
             layers = <0>;
         };
 
         tobaselayer {
-            bindings = <&to 0>;
+            bindings = <&to Base>;
             key-positions = <36 35 37>;
         };
 
         togamelayer {
-            bindings = <&to 4>;
+            bindings = <&to Gaming>;
             key-positions = <32 33 34>;
             layers = <0>;
         };
@@ -153,10 +150,10 @@
         Base {
             display-name = "Base";
             bindings = <
-           &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W           &kp V
-           &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm LEFT_ALT S  &hm LEFT_GUI N
-&htdl 1 0  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F           &kp P           &htdr 2 0
-                                   &kp ESC      &kp BACKSPACE  &kp DELETE        &kp ENTER      &kp SPACE     &kp TAB
+                &kp B       &kp Y       &kp O        &kp U          &kp APOSTROPHE    &kp SEMICOLON  &kp L         &kp D        &kp W           &kp V
+                &hm LGUI C  &hm LALT I  &hm LCTRL E  &hm LSHIFT A   &kp COMMA         &kp PERIOD     &hm RSHIFT H  &hm RCTRL T  &hm LEFT_ALT S  &hm LEFT_GUI N
+&htdl Macros 0  &kp G       &kp X       &kp J        &kp K          &kp Q             &kp Z          &kp R         &kp M        &kp F           &kp P           &htdr Sym 0
+                                        &kp ESC      &kp BACKSPACE  &kp DELETE        &kp ENTER      &kp SPACE     &kp TAB
             >;
         };
 
