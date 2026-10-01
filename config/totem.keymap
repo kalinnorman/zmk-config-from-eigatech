@@ -162,7 +162,7 @@
         };
 
         tonumbersblayer {
-            bindings = <&to 1>;
+            bindings = <&to Numbers>;
             key-positions = <16 17 18>;
         };
     };
