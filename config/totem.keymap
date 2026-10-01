@@ -130,7 +130,7 @@
             bindings = <&kp SLASH>;
             key-positions = <33 36>;
             layers = <0>;
-        }
+        };
 
         macrolayer {
             bindings = <&mo Macros>;
@@ -148,7 +148,7 @@
             bindings = <&mo 2>;
             key-positions = <16 36>;
             layers = <0>;
-        }
+        };
 
         tobaselayer {
             bindings = <&to Base>;
